@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Birlikte Geçen Zamanımız</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+      color: #fff;
+    }
+
+    .timers {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .timer-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 20px;
+      width: 300px;
+      margin: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .timer-box h2 {
+      margin-bottom: 15px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 50px auto;
+    }
+
+    .mySlides {
+      display: none;
+      position: relative;
+    }
+
+    .slide-img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .slide-text {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 28px;
+      transition: 0.3s;
+      border-radius: 3px;
+      background-color: rgba(255, 105, 180, 0.5);
+      user-select: none;
+      z-index: 10;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(255, 105, 180, 0.9);
+    }
+
+    .floating-emoji {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    .click-btn {
+      background-color: #fff;
+      color: #e91e63;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .click-text {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .names-left, .names-right {
+      position: fixed;
+      top: 40%;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+      transform: rotate(-10deg);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .names-left {
+      left: 20px;
+    }
+
+    .names-right {
+      right: 20px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-10deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-10deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="names-left">Tuğba'nın kalbiyle...</div>
+  <div class="names-right">...Melih'in ellerinde</div>
+
+  <div class="container">
+    <div class="timers">
+      <div class="timer-box">
+        <h2>Seninle kalbimin attığı ilk günden bu yana geçen zaman 💖</h2>
+        <div id="timer1"></div>
+      </div>
+      <div class="timer-box">
+        <h2>İlk kez göz göze geldiğimiz o büyülü günden bu yana geçen zaman ✨</h2>
+        <div id="timer2"></div>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.44_024b632a.jpg" alt="Slide 1">
+            <div class="slide-text glow">Senin gülüşün, kalbimde bahar açtırıyor 💖</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.45_862898b6.jpg" alt="Slide 2">
+            <div class="slide-text glow">Her şey seninle daha güzel, her an seninle bir mucize ✨</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.45_a1635c05.jpg" alt="Slide 3">
+            <div class="slide-text glow">Sonsuz bir aşkla seni seviyorum, her geçen gün biraz daha fazla. 🌹</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.45_aaca0ff5.jpg" alt="Slide 4">
+            <div class="slide-text glow">Seninle her an, bir ömre bedel. 🌹</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.46_aabad27f.jpg" alt="Slide 5">
+            <div class="slide-text glow">Gözlerinin derinliğinde kaybolmak, hayatımın en güzel macerası.🌹</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-09 saat 22.33.47_af8eb02c.jpg" alt="Slide 6">
+            <div class="slide-text glow">Aşkımız, zamanın ötesinde bir hikaye yazıyor🌹</div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slide-img" src="WhatsApp Görsel 2025-05-10 saat 13.10.52_3ae585ff.jpg" alt="Slide 7">
+            <div class="slide-text glow">Sonsuzluğa kadar seninle olmak, en büyük dileğim.🌹</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <button class="click-btn" onclick="showRandomLove()">Tıklar mısın güzelim 💌</button>
+        <div class="click-text" id="loveText"></div>
+    </div>
+
+  <script>
+    // Sayaçlar
+    function updateTimer(elementId, dateStr) {
+      const targetDate = new Date(dateStr);
+      setInterval(() => {
+        const now = new Date();
+        const diff = now - targetDate;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        document.getElementById(elementId).innerText = `${days} gün ${hours} saat ${minutes} dk ${seconds} sn`;
+      }, 1000);
+    }
+
+    updateTimer("timer1", "2025-04-02T00:00:00");
+    updateTimer("timer2", "2025-05-09T00:00:00");
+
+    // Slaytlar (otomatik + manuel)
+    let slideIndex = 0;
+    let slideTimeout;
+
+    function showSlidesManual(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex].style.display = "block";
+      resetSlideTimer();
+    }
+
+    function plusSlides(n) {
+      slideIndex += n;
+      showSlidesManual(slideIndex);
+    }
+
+    function showSlidesAuto() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      slides[slideIndex].style.display = "block";
+      slideTimeout = setTimeout(showSlidesAuto, 10000);
+    }
+
+    function resetSlideTimer() {
+      clearTimeout(slideTimeout);
+      slideTimeout = setTimeout(showSlidesAuto, 10000);
+    }
+
+    showSlidesAuto();
+
+    // Rastgele yazı
+    const loveMessages = [
+      "Nefes almamın sebebisin. ❤️",
+      "Gözlerin yıldız gibi parlıyor ✨",
+      "Birlikte geçen her saniye bir hazine 💎",
+      "Senin yanında zaman duruyor ⏳",
+      "Varlığımı değiştirdin. Seninle ve sensiz hayatım iki farklı dünya gibi. 💕"
+    ];
+
+    function showRandomLove() {
+      const msg = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+      document.getElementById("loveText").innerText = msg;
+    }
+
+    // Emoji yağmuru
+    const emojis = ["❤️", "🌹", "✨", "💖", "💕"];
+    setInterval(() => {
+      const emoji = document.createElement("div");
+      emoji.classList.add("floating-emoji");
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      document.body.appendChild(emoji);
+      setTimeout(() => {
+        emoji.remove();
+      }, 10000);
+    }, 500);
+  </script>
+</body>
+</html>
